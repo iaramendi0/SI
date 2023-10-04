@@ -9,6 +9,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import configuration.ConfigXML;
+import domain.Aukera;
+import domain.Erregistratua;
 import domain.Event;
 import domain.Question;
 
@@ -91,6 +93,20 @@ public class TestDataAccess {
 		public void persist(Object a) {
 			db.getTransaction().begin();
 			db.persist(a);
+			db.getTransaction().commit();
+		}
+
+
+		public void removeErreg(Erregistratua erab) {
+			db.getTransaction().begin();
+			db.remove(erab);
+			db.getTransaction().commit();
+		}
+
+
+		public void removeAuk(Aukera auk) {
+			db.getTransaction().begin();
+			db.remove(auk);
 			db.getTransaction().commit();
 		}
 }
