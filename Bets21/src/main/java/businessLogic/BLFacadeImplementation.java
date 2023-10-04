@@ -1,5 +1,4 @@
 package businessLogic;
-//hola
 import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.Vector;
